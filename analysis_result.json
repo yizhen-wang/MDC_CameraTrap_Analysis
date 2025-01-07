@@ -1,0 +1,204 @@
+{
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09040001.JPG": {
+        "bbox": [
+            [
+                1593,
+                795,
+                3195,
+                3491
+            ]
+        ],
+        "det_conf": [
+            0.9253456592559814
+        ],
+        "super_cate": [
+            "human"
+        ],
+        "cate": [
+            "HUMAN"
+        ],
+        "cla_conf": [
+            0.9253456592559814
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09080036.JPG": {
+        "bbox": [],
+        "det_conf": [],
+        "super_cate": [],
+        "cate": [],
+        "cla_conf": []
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09120069.JPG": {
+        "bbox": [
+            [
+                2568,
+                2918,
+                4534,
+                3482
+            ],
+            [
+                2565,
+                3069,
+                3330,
+                3484
+            ]
+        ],
+        "det_conf": [
+            0.8399820327758789,
+            0.5076029300689697
+        ],
+        "super_cate": [
+            "animal",
+            "animal"
+        ],
+        "cate": [
+            "NO_ANIMAL",
+            "NO_ANIMAL",
+            "NO_ANIMAL"
+        ],
+        "cla_conf": [
+            0.9909394979476929,
+            0.9826368689537048,
+            0.9183499813079834
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09120068.JPG": {
+        "bbox": [
+            [
+                2727,
+                3110,
+                3324,
+                3486
+            ]
+        ],
+        "det_conf": [
+            0.791610598564148
+        ],
+        "super_cate": [
+            "animal"
+        ],
+        "cate": [
+            "NO_ANIMAL"
+        ],
+        "cla_conf": [
+            0.9998200535774231
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09080035.JPG": {
+        "bbox": [
+            [
+                4160,
+                3085,
+                4365,
+                3484
+            ]
+        ],
+        "det_conf": [
+            0.5417786836624146
+        ],
+        "super_cate": [
+            "animal"
+        ],
+        "cate": [
+            "NO_ANIMAL"
+        ],
+        "cla_conf": [
+            0.998675525188446
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09050017.JPG": {
+        "bbox": [],
+        "det_conf": [],
+        "super_cate": [],
+        "cate": [],
+        "cla_conf": []
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09080034.JPG": {
+        "bbox": [
+            [
+                3938,
+                1804,
+                4360,
+                2503
+            ]
+        ],
+        "det_conf": [
+            0.7115491628646851
+        ],
+        "super_cate": [
+            "animal"
+        ],
+        "cate": [
+            "NO_ANIMAL"
+        ],
+        "cla_conf": [
+            0.9972954392433167
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09120067.JPG": {
+        "bbox": [
+            [
+                2273,
+                2250,
+                4518,
+                3477
+            ]
+        ],
+        "det_conf": [
+            0.9144250154495239
+        ],
+        "super_cate": [
+            "animal"
+        ],
+        "cate": [
+            "NO_ANIMAL"
+        ],
+        "cla_conf": [
+            0.9986013770103455
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09050018.JPG": {
+        "bbox": [
+            [
+                3166,
+                2476,
+                4171,
+                3296
+            ]
+        ],
+        "det_conf": [
+            0.868038535118103
+        ],
+        "super_cate": [
+            "animal"
+        ],
+        "cate": [
+            "WHITE_TAIL_DEER"
+        ],
+        "cla_conf": [
+            0.7322414517402649
+        ]
+    },
+    "/Users/worm/Desktop/Research_Worm/MDC/CODE/MDC_Animal_Analysis/DEMO/DATA/21-MDC-CART_09060019.JPG": {
+        "bbox": [
+            [
+                5086,
+                2941,
+                6440,
+                3486
+            ]
+        ],
+        "det_conf": [
+            0.8059701919555664
+        ],
+        "super_cate": [
+            "animal"
+        ],
+        "cate": [
+            "NO_ANIMAL"
+        ],
+        "cla_conf": [
+            0.969983696937561
+        ]
+    }
+}
