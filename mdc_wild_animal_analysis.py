@@ -37,7 +37,7 @@ def wildlife_pipeline(data_dir, **kwargs):
     if device == "cuda":
         torch.cuda.set_device(0)
 
-    animal_detector   = det.Animal_Detector(device)
+    animal_detector   = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'))
     animal_classifier = cla.Animal_Classifier(device)
     animal_analyser   = engine.Animal_Detector(data_dir, output_dir, animal_detector, animal_classifier)
     animal_analyser.run_analysis()
