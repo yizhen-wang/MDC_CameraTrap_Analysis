@@ -83,6 +83,39 @@ Ensure all images are placed directly in the specified folder. The system will h
 
 ---
 
+## Example Output
+
+### **JSON Format**
+
+```json
+{
+    "21-MDC-CART_09040001.JPG": {
+        "bbox": [
+            [1593, 795, 3195, 3491]
+        ],
+        "animal_exist": ["False"],
+        "det_conf": [0.9253456592559814],
+        "super_cate": ["human"],
+        "cate": ["HUMAN"],
+        "cla_conf": [0.9253456592559814],
+        "animal_count": [0]
+    },
+    "21-MDC-CART_09050018.JPG": {
+        "bbox": [
+            [3166, 2476, 4171, 3296]
+        ],
+        "animal_exist": ["True"],
+        "det_conf": [0.868038535118103],
+        "super_cate": ["animal"],
+        "cate": ["WHITE_TAIL_DEER"],
+        "cla_conf": [0.7322414517402649],
+        "animal_count": [0]
+    }
+}
+```
+
+---
+
 ## License
 
 This project is licensed under the **MIT License**. You are free to use, modify, and distribute this project. However, please retain the original copyright notice.
