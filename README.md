@@ -32,11 +32,12 @@ The project supports both single-image analysis and batch processing for continu
 ## Dataset
 To use this project, you only need to place your CameraTrap images in a folder. The system will automatically generate sequence information based on the capture metadata (e.g., timestamps).
 **Dataset Structure**
-```bash
-/path/to/your/images/
-├── img1.jpg
-├── img2.jpg
-├── img3.jpg
-└── ...
+   ```bash
+   /path/to/your/images/
+   ├── img1.jpg
+   ├── img2.jpg
+   ├── img3.jpg
+   └── ...
+
 Ensure all images are placed directly in the specified folder. The system will handle sequence creation and grouping automatically by extracting capture time information from the image metadata.
 ****
