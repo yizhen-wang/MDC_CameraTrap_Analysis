@@ -38,6 +38,6 @@ To use this project, you only need to place your CameraTrap images in a folder. 
    ├── img2.jpg
    ├── img3.jpg
    └── ...
-
+   ```
 Ensure all images are placed directly in the specified folder. The system will handle sequence creation and grouping automatically by extracting capture time information from the image metadata.
 ****
