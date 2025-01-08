@@ -31,10 +31,12 @@ The project supports both single-image analysis and batch processing for continu
    conda activate mdc_analysis_env
    conda install --file requirements_conda.txt
    pip install PytorchWildlife
+   ```
 
    - Option 2: Setup environment using pip:
    ```bash
    pip install -r requirements_pip.txt
+   ```
 
 3. **Verify the installation**:
    ```bash
