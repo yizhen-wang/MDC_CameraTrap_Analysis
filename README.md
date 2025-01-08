@@ -68,16 +68,16 @@ Ensure all images are placed directly in the specified folder. The system will h
    python mdc_wild_animal_analysis.py <Path to your dataset directory> --seq
 
 ### Optional Parameters
-
+<div align="center"> 
 | Parameter           | Description                                                                                   | Default Value        |
 |---------------------|-----------------------------------------------------------------------------------------------|----------------------|
-| `--output_dir`      | Directory to save results                                                                      | Current folder       |
+| `--output_dir`      | Directory to save results                                                                     | Current folder       |
 | `--seq`             | Process images in sequence mode                                                               | `False`              |
 | `--conf_threshold`  | Confidence threshold for detection                                                            | `0.5`                |
 | `--motion_analysis` | Enable motion-based algorithm to enhance detection                                            | `False`              |
 | `--save_format`     | Format to save results (`json` or `csv`)                                                      | `json`               |
-| `--save_images`     | Save images with bounding boxes and classification results                                     | `False`              |
-
+| `--save_images`     | Save images with bounding boxes and classification results                                    | `False`              |
+</div>
 
 ---
 
