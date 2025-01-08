@@ -25,14 +25,14 @@ The project supports both single-image analysis and batch processing for continu
    cd MDC_CameraTrap_Analysis
 
 2. **Setup environment**
-   Option 1: Setup environment using Anaconda:
+   - Option 1: Setup environment using Anaconda:
    ```bash
    conda create -n mdc_analysis_env python=3.8
    conda activate mdc_analysis_env
    conda install --file requirements_conda.txt
    pip install PytorchWildlife
 
-   Option 2: Setup environment using pip:
+   - Option 2: Setup environment using pip:
    ```bash
    pip install -r requirements_pip.txt
 
