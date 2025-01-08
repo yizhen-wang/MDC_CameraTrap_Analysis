@@ -19,17 +19,18 @@ The project supports both single-image analysis and batch processing for continu
 ---
 
 ## Installation
-1. **Clone the repository**:
+**Clone the repository**:
    ```bash
    git clone https://github.com/your-username/MDC_CameraTrap_Analysis.git
    cd MDC_CameraTrap_Analysis
-2. **Create a new Conda environment and install dependencies**:
+
+**Create a new Conda environment and install dependencies**:
    ```bash
    conda create -n mdc_analysis_env python=3.8
    conda activate mdc_analysis_env
    conda install --file requirements.txt
    pip install PytorchWildlife
-3. **Download pre-trained models: (Note: Currently, initial versions of the models are provided directly in the repository. Future versions may be provided via external links.)**
+**Download pre-trained models: (Note: Currently, initial versions of the models are provided directly in the repository. Future versions may be provided via external links.)**
 
 ---
 ## Dataset
