@@ -67,8 +67,10 @@ Ensure all images are placed directly in the specified folder. The system will h
    ```bash
    python mdc_wild_animal_analysis.py <Path to your dataset directory> --seq
 
-### Optional Parameters
 <div align="center"> 
+   
+### Optional Parameters
+
 | Parameter           | Description                                                                                   | Default Value        |
 |---------------------|-----------------------------------------------------------------------------------------------|----------------------|
 | `--output_dir`      | Directory to save results                                                                     | Current folder       |
@@ -77,6 +79,7 @@ Ensure all images are placed directly in the specified folder. The system will h
 | `--motion_analysis` | Enable motion-based algorithm to enhance detection                                            | `False`              |
 | `--save_format`     | Format to save results (`json` or `csv`)                                                      | `json`               |
 | `--save_images`     | Save images with bounding boxes and classification results                                    | `False`              |
+
 </div>
 
 ---
