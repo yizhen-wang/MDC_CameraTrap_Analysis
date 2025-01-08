@@ -62,10 +62,57 @@ Ensure all images are placed directly in the specified folder. The system will h
 ## Usage
 1. **Run image level analysis**:
    ```bash
-   python generate_check_csv.py
+   python mdc_wild_animal_analysis.py <Path to your dataset directory>
 2. **Run sequence level analysis**:
    ```bash
-   python generate_check_csv.py
+   python mdc_wild_animal_analysis.py <Path to your dataset directory> --seq
+
+### Optional Parameters
+<div align="center"> 
+   
+| Parameter           | Description                                                                                   | Default Value        |
+|---------------------|-----------------------------------------------------------------------------------------------|----------------------|
+| `--output_dir`      | Directory to save results                                                                     | Current folder       |
+| `--seq`             | Process images in sequence mode                                                               | `False`              |
+| `--conf_threshold`  | Confidence threshold for detection                                                            | `0.5`                |
+| `--motion_analysis` | Enable motion-based algorithm to enhance detection                                            | `False`              |
+| `--save_format`     | Format to save results (`json` or `csv`)                                                      | `json`               |
+| `--save_images`     | Save images with bounding boxes and classification results                                    | `False`              |
+
+</div>
+
+---
+
+## Example Output
+
+### **JSON Format**
+
+```json
+{
+    "21-MDC-CART_09040001.JPG": {
+        "bbox": [
+            [1593, 795, 3195, 3491]
+        ],
+        "animal_exist": ["False"],
+        "det_conf": [0.9253456592559814],
+        "super_cate": ["human"],
+        "cate": ["HUMAN"],
+        "cla_conf": [0.9253456592559814],
+        "animal_count": [0]
+    },
+    "21-MDC-CART_09050018.JPG": {
+        "bbox": [
+            [3166, 2476, 4171, 3296]
+        ],
+        "animal_exist": ["True"],
+        "det_conf": [0.868038535118103],
+        "super_cate": ["animal"],
+        "cate": ["WHITE_TAIL_DEER"],
+        "cla_conf": [0.7322414517402649],
+        "animal_count": [0]
+    }
+}
+```
 
 ---
 
