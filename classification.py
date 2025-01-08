@@ -16,9 +16,6 @@ class Animal_Classifier:
 		self.model_path = os.path.join("..", "MODEL", "effnet_b3.pt")
 		self.classification_model = self._load_model(self.device)
 		self.cla_transforms = self._get_transforms()
-		self.class_names = ["ARMADILLO", "BIRD", "BOBCAT", "COYOTE", "DOG",
-							"FERAL_HOG", "FOX", "HOUSE_CAT", "MOUSE", "OPOSSUM",
-							"RACCOON", "SQUIRREL", "WHITE_TAIL_DEER", "NO_ANIMAL"]
 
 	def _load_model(self, device):
 		model = EfficientNet.from_pretrained('efficientnet-b3')
@@ -79,11 +76,11 @@ class Animal_Classifier:
 		top_index = torch.argmax(probabilities).item()
 
 		# Get the predicted class name and confidence
-		prediction = self.class_names[top_index]
+		prediction = self.category_list[top_index]
 		confidence = probabilities[top_index].item()
 
 		# Create a list of (class_name, probability) tuples
-		# prob_list = [(self.class_names[i], probabilities[i].item()) for i in range(len(self.class_names))]
+		# prob_list = [(self.category_list[i], probabilities[i].item()) for i in range(len(self.category_list))]
 
 		return prediction, confidence
 
