@@ -109,11 +109,14 @@ Ensure all images are placed directly in the specified folder. The system will h
         "super_cate": ["animal"],
         "cate": ["WHITE_TAIL_DEER"],
         "cla_conf": [0.7322414517402649],
-        "animal_count": [0]
+        "animal_count": [1]
     }
 }
 ```
 
+### **CSV Format**
+
+![CSV Example](assets/csv_example.jpg)
 ---
 
 ## License
