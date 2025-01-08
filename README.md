@@ -40,4 +40,30 @@ To use this project, you only need to place your CameraTrap images in a folder. 
    └── ...
    ```
 Ensure all images are placed directly in the specified folder. The system will handle sequence creation and grouping automatically by extracting capture time information from the image metadata.
+
+---
+
+## Usage
+1. **Run image level analysis**:
+   ```bash
+   python generate_check_csv.py
+2. **Run sequence level analysis**:
+   ```bash
+   python generate_check_csv.py
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this project. However, please retain the original copyright notice.
+
+See the [LICENSE](LICENSE) file for more details.、
+
+---
+
+## Acknowledgements
+
+This project integrates [MegaDetector](https://github.com/microsoft/CameraTraps/blob/main/megadetector.md), an open-source animal detection model developed by Microsoft AI for Earth. We acknowledge and thank the authors of MegaDetector for their valuable contribution to the wildlife monitoring community.
+
+
 ****
