@@ -19,7 +19,7 @@ The project supports both single-image analysis and batch processing for continu
 ---
 
 ## Installation
-**Clone the repository**:
+### **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/MDC_CameraTrap_Analysis.git
    cd MDC_CameraTrap_Analysis
