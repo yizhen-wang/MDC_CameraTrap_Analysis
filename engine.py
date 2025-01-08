@@ -5,7 +5,7 @@ from PIL import Image
 import util as util
 
 class Animal_Detector:
-	def __init__(self, data_dir, output_dir, animal_detector, animal_classifier, save_crops=True):
+	def __init__(self, data_dir, output_dir, animal_detector, animal_classifier, save_crops=False):
 		if not os.path.exists(data_dir):
 			raise ValueError(f"The directory '{data_dir}' does not exist.")
 
@@ -74,7 +74,7 @@ class Animal_Detector:
 
 
 class Animal_Detector_Seq:
-	def __init__(self, data_dir, output_dir, animal_detector, animal_classifier, save_crops=True):
+	def __init__(self, data_dir, output_dir, animal_detector, animal_classifier, save_crops=False):
 		if not os.path.exists(data_dir):
 			raise ValueError(f"The directory '{data_dir}' does not exist.")
 
@@ -83,6 +83,10 @@ class Animal_Detector_Seq:
 		self.animal_detector = animal_detector
 		self.animal_classifier = animal_classifier
 		self.save_crops = save_crops
+
+	def run_analysis(self):
+		print("Sequential Analysis")
+		return 0
 
 
 
