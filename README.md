@@ -1,7 +1,7 @@
-# MDC CameraTrap Analysis
-
+<div align="center">
 ![MDC CameraTrap Analysis](assets/title.png)
-
+# MDC CameraTrap Analysis 
+</div>
 ---
 
 ## Introduction
