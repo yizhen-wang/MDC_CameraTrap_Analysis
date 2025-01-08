@@ -13,7 +13,7 @@ class Animal_Classifier:
 		self.device = device
 		self.category_list = ["ARMADILLO","BIRD","BOBCAT","COYOTE","DOG","FERAL_HOG","FOX","HOUSE_CAT",
 							  "MOUSE","OPOSSUM","RACCOON","SQUIRREL","WHITE_TAIL_DEER","NO_ANIMAL"]
-		self.model_path = os.path.join("..", "MODEL", "effnet_b3.pt")
+		self.model_path = os.path.join("..", "models", "effnet_b3.pt")
 		self.classification_model = self._load_model(self.device)
 		self.cla_transforms = self._get_transforms()
 
