@@ -2,8 +2,6 @@ import os
 import time
 import torch
 import argparse
-import detection as det
-import classification as cla
 import engine as engine
 
 def wildlife_pipeline(data_dir, **kwargs):
@@ -38,14 +36,12 @@ def wildlife_pipeline(data_dir, **kwargs):
     if device == "cuda":
         torch.cuda.set_device(0)
 
-    animal_detector   = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'))
-    animal_classifier = cla.Animal_Classifier(device)
     start_time = time.time()
     if not kwargs.get('seq'):
-        animal_analyser = engine.Animal_Detector(data_dir, output_dir, animal_detector, animal_classifier)
+        animal_analyser = engine.Animal_Detector(data_dir, device, **kwargs)
         animal_analyser.run_analysis()
     else:
-        animal_analyser = engine.Animal_Detector_Seq(data_dir, output_dir, animal_detector, animal_classifier)
+        animal_analyser = engine.Animal_Detector_Seq(data_dir, device, **kwargs)
         animal_analyser.run_analysis()
     end_time = time.time()
     print(f"Analysis completed in {end_time - start_time:.2f} seconds.")
@@ -70,6 +66,8 @@ if __name__ == "__main__":
                         help="Format to save results (default: json)")
     parser.add_argument("--save_images", action="store_true", default=False, 
                         help="Save images with bounding boxes and classification results (default: False)")
+    parser.add_argument("--disable_classification", action="store_true", default=False,
+                        help="Disable classification module. By default, classification is enabled.")
 
     args = parser.parse_args()
     kwargs = vars(args)
