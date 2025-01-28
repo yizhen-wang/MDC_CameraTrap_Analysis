@@ -1,4 +1,5 @@
 import os
+import time
 import torch
 import argparse
 import detection as det
@@ -39,12 +40,15 @@ def wildlife_pipeline(data_dir, **kwargs):
 
     animal_detector   = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'))
     animal_classifier = cla.Animal_Classifier(device)
+    start_time = time.time()
     if not kwargs.get('seq'):
         animal_analyser = engine.Animal_Detector(data_dir, output_dir, animal_detector, animal_classifier)
         animal_analyser.run_analysis()
     else:
         animal_analyser = engine.Animal_Detector_Seq(data_dir, output_dir, animal_detector, animal_classifier)
         animal_analyser.run_analysis()
+    end_time = time.time()
+    print(f"Analysis completed in {end_time - start_time:.2f} seconds.")
 
     
 if __name__ == "__main__":

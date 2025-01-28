@@ -54,8 +54,11 @@ class Animal_Classifier:
 			x = x.to(self.device)
 			x = x.unsqueeze(0)
 			y_pred = self.classification_model(x)
+			
+			#pred, conf = self.process_model_output(y_pred)
+			y_pred_trimmed = y_pred[:, :-1]
+			pred, conf = self.process_model_output(y_pred_trimmed)
 
-			pred, conf = self.process_model_output(y_pred)
 			cla_result['cate'].append(pred)
 			cla_result['cla_conf'].append(conf)
 		return cla_result
