@@ -14,7 +14,8 @@ class Animal_Detector:
 
 		self.data_dir = data_dir
 		self.output_dir = kwargs.get('output_dir')
-		self.animal_detector = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'))
+		self.animal_detector = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'), 
+													scale=kwargs.get('resize_scale'))
 		self.disable_classification = kwargs.get('disable_classification')
 		if not self.disable_classification:
 			self.animal_classifier = cla.Animal_Classifier(device)
@@ -134,7 +135,8 @@ class Animal_Detector_Seq:
 
 		self.data_dir = data_dir
 		self.output_dir = kwargs.get('output_dir')
-		self.animal_detector = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'))
+		self.animal_detector = det.Animal_Detector(device, conf_threshold=kwargs.get('conf_threshold'), 
+													scale=kwargs.get('resize_scale'))
 		self.disable_classification = kwargs.get('disable_classification')
 		if not self.disable_classification:
 			self.animal_classifier = cla.Animal_Classifier(device)

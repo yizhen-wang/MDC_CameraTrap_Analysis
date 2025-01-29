@@ -27,6 +27,7 @@ def wildlife_pipeline(data_dir, **kwargs):
     print(f"Motion Analysis: {kwargs.get('motion_analysis')}")
     print(f"Save Format: {kwargs.get('save_format')}")
     print(f"Save Images: {kwargs.get('save_images')}")
+    print(f"Resize Scale: {kwargs.get('resize_scale')}")
 
     output_dir = kwargs.get('output_dir')
     if not os.path.exists(output_dir):
@@ -68,6 +69,8 @@ if __name__ == "__main__":
                         help="Save images with bounding boxes and classification results (default: False)")
     parser.add_argument("--disable_classification", action="store_true", default=False,
                         help="Disable classification module. By default, classification is enabled.")
+    parser.add_argument("--resize_scale", type=float, default=1.0,
+                        help="Resize the image before detection.")
 
     args = parser.parse_args()
     kwargs = vars(args)
