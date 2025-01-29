@@ -103,7 +103,7 @@ class Animal_Detector:
 				analysis_results_reformat[image_name]['animal_exist'] = 'False'
 
 			if not self.disable_classification:
-				if len(analysis_results_reformat[image_name]['bbox']) > 0:
+				if len(analysis_results_reformat[image_name]['bbox']) > 0 and analysis_results_reformat[image_name]['super_cate'] == 'ANIMAL':
 					analysis_results_reformat[image_name]['cla_conf'] = round(max(analysis_results[image_name]['cla_conf']),4)
 					max_cla_index = analysis_results[image_name]['cla_conf'].index(max(analysis_results[image_name]['cla_conf']))
 					analysis_results_reformat[image_name]['category'] = analysis_results[image_name]['cate'][max_det_index]
@@ -128,7 +128,7 @@ class Animal_Detector:
 
 
 class Animal_Detector_Seq:
-	def __init__(self, data_dir, device, save_crops=False, **kwargs):
+	def __init__(self, data_dir, device, save_crops=False, include_image_level_res=True, **kwargs):
 		if not os.path.exists(data_dir):
 			raise ValueError(f"The directory '{data_dir}' does not exist.")
 
@@ -139,6 +139,7 @@ class Animal_Detector_Seq:
 		if not self.disable_classification:
 			self.animal_classifier = cla.Animal_Classifier(device)
 		self.save_crops = save_crops
+		self.include_image_level_res = include_image_level_res
 
 	def run_analysis(self):
 		print("Sequential Analysis")
@@ -204,6 +205,11 @@ class Animal_Detector_Seq:
 
 					analysis_results[seq_id]['cla_result'].append(cla_result_dict)
 
+		if self.include_image_level_res:
+			analysis_results_image = self.format_output_dict_to_image(analysis_results)
+			util.save_analysis_result_json(analysis_results_image, self.output_dir, 'analysis_result_image.json')
+			util.save_analysis_result_csv(analysis_results_image, self.output_dir, 'analysis_result_image.csv')
+
 		analysis_results = self.format_output_dict(analysis_results)
 		util.save_analysis_result_json(analysis_results, self.output_dir)
 		util.save_analysis_result_seq_csv(analysis_results, self.output_dir)
@@ -252,6 +258,42 @@ class Animal_Detector_Seq:
 
 			if analysis_results_reformat[seq_id]['animal_count']>0:
 				analysis_results_reformat[seq_id]['animal_exist'] = 'True'
+
+		return analysis_results_reformat
+
+	def format_output_dict_to_image(self, analysis_results):
+		analysis_results_reformat = {}
+		for seq_id in tqdm(analysis_results.keys()):
+			for img_idx, image_name in enumerate(analysis_results[seq_id]['image_list']):
+				analysis_results_reformat[image_name] = {}
+				analysis_results_reformat[image_name]['image_path'] = os.path.join(self.data_dir, image_name)
+				analysis_results_reformat[image_name]['bbox'] = analysis_results[seq_id]['det_result'][img_idx]['bbox']
+
+				if len(analysis_results[seq_id]['det_result'][img_idx]['bbox']) > 0:
+					max_det_index = analysis_results[seq_id]['det_result'][img_idx]['bbox'].index(
+						max(analysis_results[seq_id]['det_result'][img_idx]['bbox']))
+					analysis_results_reformat[image_name]['super_cate'] = analysis_results[seq_id]['det_result'][img_idx]['super_cate'][max_det_index]
+				else:
+					analysis_results_reformat[image_name]['super_cate'] = 'None'
+
+				if analysis_results_reformat[image_name]['super_cate'] == 'ANIMAL':
+					analysis_results_reformat[image_name]['animal_exist'] = 'True'
+				else:
+					analysis_results_reformat[image_name]['animal_exist'] = 'False'
+
+				if not self.disable_classification:
+					if len(analysis_results_reformat[image_name]['bbox']) > 0 and analysis_results_reformat[image_name]['super_cate'] == 'ANIMAL':
+						analysis_results_reformat[image_name]['cla_conf'] = round(max(analysis_results[seq_id]['cla_result'][img_idx]['cla_conf']),4)
+						max_cla_index = analysis_results[image_name]['cla_conf'].index(max(analysis_results[seq_id]['cla_result'][img_idx]['cla_conf']))
+						analysis_results_reformat[image_name]['category'] = analysis_results[seq_id]['cla_result'][img_idx][max_det_index]
+					else:
+						analysis_results_reformat[image_name]['cla_conf'] = 0
+						analysis_results_reformat[image_name]['category'] = 'None'
+				else:
+					analysis_results_reformat[image_name]['animal_count'] = 0
+					for i in range(len(analysis_results[seq_id]['det_result'][img_idx]['bbox'])):
+						if analysis_results[seq_id]['det_result'][img_idx]['super_cate'][i] == 'ANIMAL':
+							analysis_results_reformat[image_name]['animal_count']+=1
 
 		return analysis_results_reformat
 

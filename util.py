@@ -17,13 +17,13 @@ def datetime_converter(o):
 		return o.strftime('%Y-%m-%d %H:%M:%S')
 	raise TypeError("Type not serializable")
 
-def save_analysis_result_json(result_dict, output_dir):
-	output_file = os.path.join(output_dir, 'analysis_result.json')
+def save_analysis_result_json(result_dict, output_dir, output_filename=None):
+	output_file = os.path.join(output_dir, output_filename if output_filename else 'analysis_result.json')
 	with open(output_file, "w") as f:
 		json.dump(result_dict, f, default=datetime_converter, indent=4)
 
-def save_analysis_result_csv(result_dict, output_dir):
-	output_file = os.path.join(output_dir, 'analysis_result.csv')
+def save_analysis_result_csv(result_dict, output_dir, output_filename=None):
+	output_file = os.path.join(output_dir, output_filename if output_filename else 'analysis_result.csv')
 	fieldnames = ['image_name'] + list(next(iter(result_dict.values())).keys())
 
 	with open(output_file, 'w', newline='') as csvfile:
@@ -35,8 +35,8 @@ def save_analysis_result_csv(result_dict, output_dir):
 			row.update(data)
 			writer.writerow(row)
 
-def save_analysis_result_seq_csv(result_dict, output_dir):
-	output_file = os.path.join(output_dir, 'analysis_result.csv')
+def save_analysis_result_seq_csv(result_dict, output_dir, output_filename=None):
+	output_file = os.path.join(output_dir, output_filename if output_filename else 'analysis_result.csv')
 	fieldnames = ['seq_id'] + list(next(iter(result_dict.values())).keys())
 
 	with open(output_file, 'w', newline='') as csvfile:
